@@ -85,16 +85,19 @@ The product we want to build is clearly defined. The vision is clear for Calorie
 ### 1. User Features (Required and Optional)
 
 Required Features:
-- API call to fetch data
-- User will be able to enter the food they desire through an EditText View
+- API calls to fetch data from Nutrition API
+- User will be able to enter the food through an EditText View. Which CalorieCalc will take user's input to make an API call to get information about the food entered by the user from the Nutrition API
 - Search Button to fetch food info requested by user
 - RecyclerView to display the list of what the user chose to consume
 
 
 Stretch Features:
-- Another Activity or a Toast
+- Create Food Class to construct Food Object from JSONArray
+- Another Activity or a Fragment
 - The user will be initially asked "What is your calorie intake goal for today?". The purpose of this feature is for the user to be able to add food to the list until the calorie amount reaches his/her calorie intake goal for the day.
 - There will be a section for the user to type the food he/she desires as well as a Search button to search for the desired food.
+- Implemented functionality so user must enter value in both EditText in order to proceed.
+- Toast will be displayed to user stating to "Please enter values in both fields" if user did not enter values in both fields.
 
 
 

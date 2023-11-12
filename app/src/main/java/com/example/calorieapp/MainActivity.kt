@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 
@@ -43,12 +44,49 @@ class MainActivity : AppCompatActivity() {
         searchButton.setOnClickListener(){
 
             val calorieGoalEditText = findViewById<EditText>(R.id.calorie_goal_answer)
-            convertEditTextToDouble(calorieGoalEditText)
-            println(calorieGoal)
+            //  convertEditTextToDouble(calorieGoalEditText)
+            //  userInput = findViewById<EditText>(R.id.food_answer).text.toString()
+            //  getFoodInfo(userInput)
+            userInput = findViewById<EditText>(R.id.food_answer).text.toString()
+
+            if(calorieGoalEditText.text.toString().isNotEmpty() && userInput.isNotEmpty()){
+                convertEditTextToDouble(calorieGoalEditText)
+                getFoodInfo(userInput)
+            }
+            else {
+                // Display a message or perform some action if either EditText is empty
+                Toast.makeText(this, "Please enter values in both fields", Toast.LENGTH_SHORT).show()
+            }
 
 
-             userInput = findViewById<EditText>(R.id.food_answer).text.toString()
-             getFoodInfo(userInput)
+
+
+
+//            // Get references to the EditText fields
+//            val calorieGoalEditText = findViewById<EditText>(R.id.calorie_goal_answer)
+//            val foodAnswerEditText = findViewById<EditText>(R.id.food_answer)
+//
+//            // Get the text from the EditText fields
+//            val calorieGoalText = calorieGoalEditText.text.toString()
+//            val foodAnswerText = foodAnswerEditText.text.toString()
+//
+//            // Check if both EditText fields are not empty
+//            if (calorieGoalText.isNotEmpty() && foodAnswerText.isNotEmpty()) {
+//
+//                // Convert calorieGoalText to Double
+//                calorieGoal = convertEditTextToDouble(calorieGoalText)
+//
+//                // Get food information using the input from the second EditText
+//                getFoodInfo(foodAnswerText)
+//
+//            } else {
+//                // Display a message or perform some action if either EditText is empty
+//                Toast.makeText(this, "Please enter values in both fields", Toast.LENGTH_SHORT).show()
+//            }
+
+
+
+
         }
     }
 
