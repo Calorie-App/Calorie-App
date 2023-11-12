@@ -7,6 +7,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 
 import okhttp3.Call
@@ -23,7 +26,7 @@ import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestHeaders
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
-import com.example.gameofthroneapp.FoodAdapter
+import com.example.calorieapp.FoodAdapter
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.message.BasicHeader
 import okhttp3.Headers
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -35,7 +38,7 @@ import java.net.URLEncoder
 class MainActivity : AppCompatActivity() {
 
     private lateinit var foodList : MutableList<Food>
-//    private lateinit var foodRecyclerView : RecyclerView
+ //   private lateinit var foodRecyclerView : RecyclerView
 
     private var calorieGoal : Double = 0.0
     private lateinit var userInput : String
@@ -43,10 +46,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        foodRecyclerView = findViewById<RecyclerView>(R.id.foodRecyclerView)
+      // foodRecyclerView = findViewById<RecyclerView>(R.id.foodRecyclerView)
         foodList = mutableListOf<Food>()
 
-        val textView = findViewById<TextView>(R.id.apiTester)
         val searchButton = findViewById<Button>(R.id.search_button)
         searchButton.setOnClickListener(){
 
@@ -57,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
 
              userInput = findViewById<EditText>(R.id.food_answer).text.toString()
-             getFoodInfo(textView, userInput)
+             getFoodInfo(userInput)
         }
 
 
@@ -108,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun getFoodInfo(textView: TextView, food: String) {
+    private fun getFoodInfo(food: String) {
         val client = AsyncHttpClient()
         val API_KEY = "QpWHeJe+v61Szjf1tIYvPg==edPDwj9M04faGItV"
         val url = "https://api.api-ninjas.com/v1/nutrition?query=${food}"
@@ -119,13 +121,32 @@ class MainActivity : AppCompatActivity() {
 
         client[url,requestHeaders, params, object : JsonHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: Headers, json: JSON) {
-                Log.d("Food", "response successful$json")
-
 
                 val foodArray = json.jsonArray
                 foodList = Food.fromJSONArray(foodArray)
 
 
+               //var countCalories = 0.0
+//                while(countCalories < calorieGoal){
+//                    foodList = Food.fromJSONArray(foodArray)
+//                    val caloriesValue = Object.getDouble("calories")
+//                }
+
+                var countCalories = 0.0
+                while(countCalories <= calorieGoal){
+                    for (food in foodList) {
+                        val caloriesValue = food.getCalorie()
+                        countCalories += caloriesValue
+                    }
+                }
+
+
+
+
+
+
+
+                Log.d("Food", "response successful$json")
 
                 //Now we need to bind food data (these Foods) to our Adapter
                 val foodAdapter = FoodAdapter(foodList)
@@ -175,5 +196,8 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+
+
+
 
 

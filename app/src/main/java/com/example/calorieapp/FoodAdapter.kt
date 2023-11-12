@@ -1,4 +1,5 @@
-package com.example.gameofthroneapp
+
+package com.example.calorieapp
 
 import android.view.LayoutInflater
 import android.view.View
