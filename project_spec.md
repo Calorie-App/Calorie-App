@@ -89,11 +89,11 @@ Required Features:
 - User will be able to enter the desired food through an EditText View. Which CalorieCalc will take user's input to make API calls to get information about the food entered by the user from the Nutrition API
 - Search Button will search food info requested by user
 - RecyclerView to display the list of what the user chose to consume
+- Fragment will display fetched food data from API
 
 
 Stretch Features:
 - Create Food Class to construct Food Object from JSONArray
-- Another Activity or a Fragment
 - The user will be initially asked "What is your calorie intake goal for today?". The purpose of this feature is for the user to be able to add food to the list until the calorie amount reaches his/her calorie intake goal for the day.
 - There will be a section for the user to type the food he/she desires as well as a Search button to search for the desired food.
 - Implemented functionality so user must enter value in both EditText in order to proceed.
