@@ -6,10 +6,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 
 import okhttp3.Call
@@ -26,14 +22,7 @@ import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestHeaders
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
-import com.example.calorieapp.FoodAdapter
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.message.BasicHeader
 import okhttp3.Headers
-import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.internal.http2.Header
-import org.w3c.dom.Text
-import java.net.URL
-import java.net.URLEncoder
 
 class MainActivity : AppCompatActivity() {
 
@@ -135,7 +124,7 @@ class MainActivity : AppCompatActivity() {
                 var countCalories = 0.0
                 while(countCalories <= calorieGoal){
                     for (food in foodList) {
-                        val caloriesValue = food.getCalorie()
+                        val caloriesValue = food.getCalories()
                         countCalories += caloriesValue
                     }
                 }

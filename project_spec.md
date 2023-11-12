@@ -143,9 +143,20 @@ Required Feature
 Here's a place for any other notes on the app, it's creation
 process, or what you learned this unit!
 
+- PowerPoint Presentation for CalorieCalc was created as well
+
+Things Learned:
+- An intial idea made not go as planned when it comes to coding some adjustments must be made
+- API KEY cannot be sent on URL for Security Reasons
+- API KEY must be added to the headers 
+- Our approach was making a Food Class to construct a Food object from the JSONArray
+
 For Milestone 2, include **2+ Videos/GIFs** of the build process here!
 
 <img src='Videos/UI_Building_Process.mp4' title='Main Page UI Building Process' width='450' alt='Main Page UI Building Process' />
+<img src='Videos/Food_Building_Process.mp4' title='Food Object Building Process' width='450' alt='Food Object Building Process' />
+
+
 
 ## License
 

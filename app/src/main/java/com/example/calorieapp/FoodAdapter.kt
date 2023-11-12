@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 //import com.bumptech.glide.Glide
-import com.example.calorieapp.Food
-import com.example.calorieapp.R
 
 class FoodAdapter(val foodList: MutableList<Food>) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
@@ -51,7 +49,7 @@ class FoodAdapter(val foodList: MutableList<Food>) : RecyclerView.Adapter<FoodAd
         food = foodList.get(position)
 
         holder.foodName.setText(food.getName())
-        holder.calories.setText(food.getCalorie().toString())
+        holder.calories.setText(food.getCalories().toString())
         holder.saturatedFat.setText(food.getFatSaturated().toString())
         holder.protein.setText(food.getProtein().toString())
         holder.carbohydrate.setText(food.getCarbohydrate().toString())

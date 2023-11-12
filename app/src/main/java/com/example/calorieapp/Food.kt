@@ -1,12 +1,10 @@
 package com.example.calorieapp
 
-import android.os.Bundle
-import android.widget.Button
 import org.json.JSONArray
 import org.json.JSONObject
 open class Food {
 
-    private lateinit var name: String
+    private var name: String
     private var calories: Double = 0.0
     private var fatSaturated: Double = 0.0
     private var protein: Double = 0.0
@@ -23,23 +21,13 @@ open class Food {
     }
 
     companion object {
-
-
         @JvmStatic
         fun fromJSONArray(foodJSONArray: JSONArray): MutableList<Food> {
             val foodList: MutableList<Food> = mutableListOf()
-
-            val calorieCount = 0
-
             for (i in 0 until foodJSONArray.length()) {
-
-
-
                         foodList.add(object :
                             Food(foodJSONArray.getJSONObject(i)) {
                         })
-
-
             }
             return foodList
         }
@@ -53,7 +41,7 @@ open class Food {
         return name
     }
 
-    fun getCalorie(): Double {
+    fun getCalories(): Double {
         return calories
     }
 
