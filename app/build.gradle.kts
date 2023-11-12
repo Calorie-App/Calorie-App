@@ -47,6 +47,7 @@ dependencies {
 
 
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
+    implementation("com.google.firebase:firebase-crashlytics-buildtools:2.9.9")
 
 
     testImplementation("junit:junit:4.13.2")

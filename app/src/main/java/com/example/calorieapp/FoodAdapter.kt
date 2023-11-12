@@ -14,7 +14,7 @@ class FoodAdapter(val foodList: MutableList<Food>) : RecyclerView.Adapter<FoodAd
 
     class FoodViewHolder (view: View) : RecyclerView.ViewHolder(view){
 
-       // val gameOfThroneImageView: ImageView
+       // val foodImageView: ImageView
         val foodName: TextView
         val calories : TextView
         val saturatedFat : TextView
@@ -22,10 +22,10 @@ class FoodAdapter(val foodList: MutableList<Food>) : RecyclerView.Adapter<FoodAd
         val carbohydrate : TextView
         val fiber : TextView
 
-        // set the gameOfThroneImageView value in the init body of the GameOfThroneViewHolder class
+        // set the foodImageView value in the init body of the foodViewHolder class
         // the code inside the init body will always run when the class is instantiated
         init {
-           // gameOfThroneImageView = view.findViewById(R.id.gameOfThrone_image)
+           // foodImageView = view.findViewById(R.id.gameOfThrone_image)
             foodName = view.findViewById(R.id.food_name_textView)
             calories = view.findViewById(R.id.calories_textView)
             saturatedFat = view.findViewById(R.id.fatSaturated_textView)
@@ -59,9 +59,9 @@ class FoodAdapter(val foodList: MutableList<Food>) : RecyclerView.Adapter<FoodAd
 
 
 //        Glide.with(holder.itemView)
-//            .load(food.getCharacterImageURL()) // gameOfThroneList contains a list of URLs to the character photos
+//            .load(food.getCharacterImageURL()) // foodList contains a list of URLs to the character photos
 //            .centerCrop()
-//            .into(holder.gameOfThroneImageView) // in this method basically you're passing the imageView that you want to put this photo URL into
+//            .into(holder.foodImageView) // in this method basically you're passing the imageView that you want to put this photo URL into
 
 
     }

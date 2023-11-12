@@ -23,11 +23,14 @@ import java.io.IOException
 
 
 import com.codepath.asynchttpclient.AsyncHttpClient
+import com.codepath.asynchttpclient.RequestHeaders
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.gameofthroneapp.FoodAdapter
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.message.BasicHeader
 import okhttp3.Headers
 import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.internal.http2.Header
 import org.w3c.dom.Text
 import java.net.URL
 import java.net.URLEncoder
@@ -37,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var foodList : MutableList<Food>
 //    private lateinit var foodRecyclerView : RecyclerView
 
-    private var calorieGoal : Int = 0
+    private var calorieGoal : Double = 0.0
     private lateinit var userInput : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,13 +49,27 @@ class MainActivity : AppCompatActivity() {
 //        foodRecyclerView = findViewById<RecyclerView>(R.id.foodRecyclerView)
         foodList = mutableListOf<Food>()
 
-       // calorieGoal = findViewById<EditText>(R.id.calorie_goal_answer).text
 
 
         val searchButton = findViewById<Button>(R.id.search_button)
         searchButton.setOnClickListener(){
+            // Assuming your EditText is defined in your XML layout file with the id "calorie_goal_answer"
+            val calorieGoalEditText = findViewById<EditText>(R.id.calorie_goal_answer)
+
+            // Get the text from the EditText
+            val calorieGoalText = calorieGoalEditText.text.toString().trim()
+
+            // Convert the text to a Double
+            calorieGoal = try {
+                calorieGoalText.toDouble()
+            } catch (e: NumberFormatException) {
+                // Handle the case where the input is not a valid Double
+                // For now, let's set it to 0.0 as a default value.
+                calorieGoal
+            }
+            println(calorieGoal)
              userInput = findViewById<EditText>(R.id.food_answer).text.toString()
-        getFoodInfo(userInput)
+             getFoodInfo(userInput)
         }
 
 
@@ -93,6 +110,7 @@ class MainActivity : AppCompatActivity() {
         val API_KEY = "QpWHeJe+v61Szjf1tIYvPg==edPDwj9M04faGItV"
         val url = "https://api.api-ninjas.com/v1/nutrition?query=${food}"
 
+
         client[url,object : JsonHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: Headers, json: JSON) {
                 Log.d("Food", "response successful$json")
@@ -118,4 +136,7 @@ class MainActivity : AppCompatActivity() {
         }]
     }
 
+
 }
+
+

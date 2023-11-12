@@ -34,7 +34,7 @@ open class Food {
         }
     }
 
-//    fun getCharacterImageURL(): String {
+//    fun getfoodImageURL(): String {
 //        return characterImage
 //    }
 
