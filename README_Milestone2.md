@@ -56,3 +56,4 @@ Things Learned:
 - API KEY cannot be sent on URL for Security Reasons
 - API KEY must be added to the headers
 - Our approach was making a Food Class to construct a Food object from the JSONArray
+- Learned to convert user's input in an EditText to Double 

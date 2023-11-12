@@ -60,10 +60,7 @@ class FoodAdapter(val foodList: MutableList<Food>) : RecyclerView.Adapter<FoodAd
 //            .load(food.getCharacterImageURL()) // foodList contains a list of URLs to the character photos
 //            .centerCrop()
 //            .into(holder.foodImageView) // in this method basically you're passing the imageView that you want to put this photo URL into
-
-
     }
-
 }
 
 

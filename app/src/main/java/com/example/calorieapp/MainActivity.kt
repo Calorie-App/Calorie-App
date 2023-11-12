@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 
 
 import okhttp3.Call
@@ -46,20 +47,9 @@ class MainActivity : AppCompatActivity() {
             println(calorieGoal)
 
 
-
              userInput = findViewById<EditText>(R.id.food_answer).text.toString()
              getFoodInfo(userInput)
         }
-
-
-
-    //       val textView = findViewById<TextView>(R.id.apiTester)
-//        val button = findViewById<Button>(R.id.search_button)
-//        button.setOnClickListener(){
-//            val userInput = findViewById<EditText>(R.id.food_answer).text.toString()
-//            getNutritionInfo(textView, userInput)
-//        }
-
     }
 
     private fun convertEditTextToDouble(calorieGoalEditText: EditText?) {
@@ -114,13 +104,6 @@ class MainActivity : AppCompatActivity() {
                 val foodArray = json.jsonArray
                 foodList = Food.fromJSONArray(foodArray)
 
-
-               //var countCalories = 0.0
-//                while(countCalories < calorieGoal){
-//                    foodList = Food.fromJSONArray(foodArray)
-//                    val caloriesValue = Object.getDouble("calories")
-//                }
-
                 var countCalories = 0.0
                 while(countCalories <= calorieGoal){
                     for (food in foodList) {
@@ -128,13 +111,6 @@ class MainActivity : AppCompatActivity() {
                         countCalories += caloriesValue
                     }
                 }
-
-
-
-
-
-
-
                 Log.d("Food", "response successful$json")
 
                 //Now we need to bind food data (these Foods) to our Adapter
@@ -156,11 +132,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-//    // Define a simple fragment
+
+    // Define a simple fragment
 //    class MyFragment : Fragment() {
 //        // Fragment code goes here
 //    }
-//
+
 //    // Use the fragment in an activity
 //    class FoodItem : AppCompatActivity() {
 //        override fun onCreate(savedInstanceState: Bundle?) {
@@ -172,17 +149,19 @@ class MainActivity : AppCompatActivity() {
 //            val noButton = findViewById<Button>(R.id.no_button)
 //            noButton.setOnClickListener {
 //
+//                    // Remove the fragment when "No" button is clicked
+//                    val fragmentTransaction = supportFragmentManager.beginTransaction()
+//                    val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+//                    fragment?.let {
+//                        fragmentTransaction.remove(it)
+//                        fragmentTransaction.commit()
+//                    }
 //            }
-//
-//            // Create a new instance of the fragment and add it to the activity
-//            val fragmentTransaction = supportFragmentManager.beginTransaction()
-//            val fragment = MyFragment()
-//            fragmentTransaction.replace(R.id.fragment_container, fragment)
-//            fragmentTransaction.commit()
 //        }
+//
 //    }
-
-
+//
+//
 
 }
 

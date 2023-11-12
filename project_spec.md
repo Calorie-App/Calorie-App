@@ -145,11 +145,14 @@ process, or what you learned this unit!
 
 - PowerPoint Presentation for CalorieCalc was created as well
 
+
 Things Learned:
 - An intial idea made not go as planned when it comes to coding some adjustments must be made
 - API KEY cannot be sent on URL for Security Reasons
 - API KEY must be added to the headers 
 - Our approach was making a Food Class to construct a Food object from the JSONArray
+- Learned to convert user's input in an EditText to Double 
+
 
 For Milestone 2, include **2+ Videos/GIFs** of the build process here!
 
