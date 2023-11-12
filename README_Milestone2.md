@@ -27,9 +27,9 @@ The following REQUIRED files are included:
     - [X] App Overview (Milestone 1)
     - [X] App Spec (Milestone 1)
     - [X] Checked off 2+ completed features
-      - [X] API calls to fetch data from Nutrition API 
-      - [X] User is able to enter the food through an EditText View. Which CalorieCalc takes user's input to make an API call to get information about the food entered by the user
-      - [X] Search Button fetches food info requested by user
+      - [X] API calls will fetch data from Nutrition API
+      - [X] User will be able to enter the desired food through an EditText View. Which CalorieCalc will take user's input to make API calls to get information about the food entered by the user from the Nutrition API
+      - [X] Search Button will search food info requested by user
       - [X] Implemented functionality so user must enter value in both EditText in order to proceed.
       - [X] Toast is displayed to user stating to "Please enter values in both fields" if user did not enter values in both fields.
       - [X] Created a Food Class to construct Food Objects from JSONArray
@@ -41,7 +41,6 @@ The following REQUIRED files are included:
     - [ ] We have also added the Demo Video Link to the Group Info Form on the course portal.
 
 The following EXTRA features are implemented:
-
 - [] List anything else that you added to improve your submission!
     
 
@@ -65,5 +64,5 @@ Things Learned:
 - An intial idea made not go as planned when it comes to coding some adjustments must be made
 - API KEY cannot be sent on URL for Security Reasons
 - API KEY must be added to the headers
-- Our approach was making a Food Class to construct a Food object from the JSONArray
+- Our approach was making a Food Class to construct a Food object from the JSONArray. There are several ways we could have gone, we chose to go with this approach.
 - Learned to convert user's input in an EditText to Double 

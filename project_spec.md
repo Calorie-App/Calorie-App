@@ -85,9 +85,9 @@ The product we want to build is clearly defined. The vision is clear for Calorie
 ### 1. User Features (Required and Optional)
 
 Required Features:
-- API calls to fetch data from Nutrition API
-- User will be able to enter the food through an EditText View. Which CalorieCalc will take user's input to make an API call to get information about the food entered by the user from the Nutrition API
-- Search Button to fetch food info requested by user
+- API calls will fetch data from Nutrition API
+- User will be able to enter the desired food through an EditText View. Which CalorieCalc will take user's input to make API calls to get information about the food entered by the user from the Nutrition API
+- Search Button will search food info requested by user
 - RecyclerView to display the list of what the user chose to consume
 
 
