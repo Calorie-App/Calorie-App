@@ -3,7 +3,6 @@ package com.example.gameofthroneapp
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 //import com.bumptech.glide.Glide
@@ -26,7 +25,7 @@ class FoodAdapter(val foodList: MutableList<Food>) : RecyclerView.Adapter<FoodAd
         // the code inside the init body will always run when the class is instantiated
         init {
            // foodImageView = view.findViewById(R.id.gameOfThrone_image)
-            foodName = view.findViewById(R.id.food_name_textView)
+            foodName = view.findViewById(R.id.name_textView)
             calories = view.findViewById(R.id.calories_textView)
             saturatedFat = view.findViewById(R.id.fatSaturated_textView)
             protein = view.findViewById(R.id.protein_TextView)

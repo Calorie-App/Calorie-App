@@ -1,5 +1,7 @@
 package com.example.calorieapp
 
+import android.os.Bundle
+import android.widget.Button
 import org.json.JSONArray
 import org.json.JSONObject
 open class Food {
@@ -13,7 +15,7 @@ open class Food {
 
     constructor(jsonObject: JSONObject) {
         name = jsonObject.getString("name")
-        calories = jsonObject.getDouble("")
+        calories = jsonObject.getDouble("calories")
         fatSaturated = jsonObject.getDouble("fat_saturated_g")
         protein = jsonObject.getDouble("protein_g")
         carbohydrate = jsonObject.getDouble("carbohydrates_total_g")
@@ -21,14 +23,23 @@ open class Food {
     }
 
     companion object {
+
+
         @JvmStatic
         fun fromJSONArray(foodJSONArray: JSONArray): MutableList<Food> {
             val foodList: MutableList<Food> = mutableListOf()
 
+            val calorieCount = 0
+
             for (i in 0 until foodJSONArray.length()) {
-                foodList.add(object :
-                    Food(foodJSONArray.getJSONObject(i)) {
-                })
+
+
+
+                        foodList.add(object :
+                            Food(foodJSONArray.getJSONObject(i)) {
+                        })
+
+
             }
             return foodList
         }

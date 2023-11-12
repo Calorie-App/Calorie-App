@@ -2,14 +2,11 @@ package com.example.calorieapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Website.URL
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
 
 
 import okhttp3.Call
@@ -49,28 +46,20 @@ class MainActivity : AppCompatActivity() {
 //        foodRecyclerView = findViewById<RecyclerView>(R.id.foodRecyclerView)
         foodList = mutableListOf<Food>()
 
-
-
+        val textView = findViewById<TextView>(R.id.apiTester)
         val searchButton = findViewById<Button>(R.id.search_button)
         searchButton.setOnClickListener(){
-            // Assuming your EditText is defined in your XML layout file with the id "calorie_goal_answer"
+
             val calorieGoalEditText = findViewById<EditText>(R.id.calorie_goal_answer)
-
-            // Get the text from the EditText
-            val calorieGoalText = calorieGoalEditText.text.toString().trim()
-
-            // Convert the text to a Double
-            calorieGoal = try {
-                calorieGoalText.toDouble()
-            } catch (e: NumberFormatException) {
-                // Handle the case where the input is not a valid Double
-                // For now, let's set it to 0.0 as a default value.
-                calorieGoal
-            }
+            convertEditTextToDouble(calorieGoalEditText)
             println(calorieGoal)
+
+
+
              userInput = findViewById<EditText>(R.id.food_answer).text.toString()
-             getFoodInfo(userInput)
+             getFoodInfo(textView, userInput)
         }
+
 
 
     //       val textView = findViewById<TextView>(R.id.apiTester)
@@ -80,6 +69,20 @@ class MainActivity : AppCompatActivity() {
 //            getNutritionInfo(textView, userInput)
 //        }
 
+    }
+
+    private fun convertEditTextToDouble(calorieGoalEditText: EditText?) {
+        // Get the text from the EditText
+        val calorieGoalText = calorieGoalEditText?.text.toString().trim()
+
+        // Convert the text to a Double
+        calorieGoal = try {
+            calorieGoalText.toDouble()
+        } catch (e: NumberFormatException) {
+            // Handle the case where the input is not a valid Double
+            // For now, let's set it to 0.0 as a default value.
+            calorieGoal
+        }
     }
 
 
@@ -105,20 +108,26 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun getFoodInfo(food: String) {
+    private fun getFoodInfo(textView: TextView, food: String) {
         val client = AsyncHttpClient()
         val API_KEY = "QpWHeJe+v61Szjf1tIYvPg==edPDwj9M04faGItV"
         val url = "https://api.api-ninjas.com/v1/nutrition?query=${food}"
 
+        val params =  RequestParams()
+        val requestHeaders = RequestHeaders()
+        requestHeaders["x-api-key"] = API_KEY
 
-        client[url,object : JsonHttpResponseHandler() {
+        client[url,requestHeaders, params, object : JsonHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: Headers, json: JSON) {
                 Log.d("Food", "response successful$json")
+
 
                 val foodArray = json.jsonArray
                 foodList = Food.fromJSONArray(foodArray)
 
-                //Now we need to bind Game Of Throne data (these URLs) to our Adapter
+
+
+                //Now we need to bind food data (these Foods) to our Adapter
                 val foodAdapter = FoodAdapter(foodList)
 //                foodRecyclerView.adapter = foodAdapter
 //                foodRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
@@ -135,6 +144,34 @@ class MainActivity : AppCompatActivity() {
             }
         }]
     }
+
+
+//    // Define a simple fragment
+//    class MyFragment : Fragment() {
+//        // Fragment code goes here
+//    }
+//
+//    // Use the fragment in an activity
+//    class FoodItem : AppCompatActivity() {
+//        override fun onCreate(savedInstanceState: Bundle?) {
+//            super.onCreate(savedInstanceState)
+//            setContentView(R.layout.food_item)
+//
+//
+//            val yesButton = findViewById<Button>(R.id.yes_button)
+//            val noButton = findViewById<Button>(R.id.no_button)
+//            noButton.setOnClickListener {
+//
+//            }
+//
+//            // Create a new instance of the fragment and add it to the activity
+//            val fragmentTransaction = supportFragmentManager.beginTransaction()
+//            val fragment = MyFragment()
+//            fragmentTransaction.replace(R.id.fragment_container, fragment)
+//            fragmentTransaction.commit()
+//        }
+//    }
+
 
 
 }
