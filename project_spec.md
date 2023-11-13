@@ -100,6 +100,9 @@ Stretch Features:
 - Toast will be displayed to user stating to "Please enter values in both fields" if user did not enter values in both fields.
 
 
+EXTRA Features:
+  - [X] CalorieCalc takes user's calorie goal input in EditText, turns it into Text and then converts to Double
+  - [X] User must first enter calorie goal and food that wants to search in order to proceed. Calorie goal is set to user's input and remains constant. Since it would be unnecessary to obligate user to enter calorie goal and food to be searched in order to proceed, functionality was implemented so the user does not have to put both inputs to proceed, user can just enter food that he/she wants to search.
 
 ### 2. Chosen API(s)
 
