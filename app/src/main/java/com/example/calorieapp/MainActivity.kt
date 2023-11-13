@@ -226,7 +226,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 
 import com.codepath.asynchttpclient.AsyncHttpClient
@@ -242,12 +246,21 @@ class MainActivity : AppCompatActivity(), FoodFragment.OnButtonClickListener {
     private lateinit var foodList: MutableList<Food>
     private var calorieGoal: Double = 0.0
     private lateinit var userInput: String
+    private lateinit var foodRecyclerView : RecyclerView
+    private var firstTime = 0
+    private lateinit var foodResult: MutableList<Food>
+    private var prevCal = 0.0
+    private lateinit var foodListTotal: MutableList<Food>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        foodRecyclerView = findViewById<RecyclerView>(R.id.foodRecyclerView)
 
         foodList = mutableListOf<Food>()
+        foodListTotal = mutableListOf<Food>()
+        // food user selected as yes. Last food item not added to list
+        foodResult = mutableListOf<Food>()
 
         val searchButton = findViewById<Button>(R.id.search_button)
         searchButton.setOnClickListener {
@@ -258,6 +271,10 @@ class MainActivity : AppCompatActivity(), FoodFragment.OnButtonClickListener {
             userInput = findViewById<EditText>(R.id.food_answer).text.toString()
 
             if(calorieGoalEditText.text.toString().isNotEmpty() && userInput.isNotEmpty()){
+                convertEditTextToDouble(calorieGoalEditText)
+                getFoodInfo(userInput)
+            }
+            else if(userInput.isNotEmpty() && firstTime==1) {
                 convertEditTextToDouble(calorieGoalEditText)
                 getFoodInfo(userInput)
             }
@@ -307,25 +324,32 @@ class MainActivity : AppCompatActivity(), FoodFragment.OnButtonClickListener {
                     commit()
                 }
 
-                foodList = Food.fromJSONArray(foodArray)
 
-                var countCalories = 0.0
-                while(countCalories <= calorieGoal){
-                    for (food in foodList) {
-                        val caloriesValue = food.getCalories()
-                        countCalories += caloriesValue
-                    }
-                }
+
+                // this is creating the apple and adding it to
+               foodList = Food.fromJSONArray(foodArray)
+
+
+
+
+//                var countCalories = 0.0
+//                while(countCalories <= calorieGoal){
+//                    for (food in foodList) {
+//                        val caloriesValue = food.getCalories()
+//                        countCalories += caloriesValue
+//                    }
+//                }
 
                 Log.d("Food", "response successful$json")
 
                 // Now we need to bind food data (these Foods) to our Adapter
                 // Assuming you have a RecyclerView in your FoodFragment layout
                 // Uncomment and adjust the following lines based on your actual implementation
-                // val foodAdapter = FoodAdapter(foodList)
-                // foodRecyclerView.adapter = foodAdapter
-                // foodRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-                // foodRecyclerView.addItemDecoration(DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL))
+//                 val foodAdapter = FoodAdapter(foodList)
+//                 foodRecyclerView.adapter = foodAdapter
+//                 foodRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+//                 foodRecyclerView.addItemDecoration(DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL))
+
             }
 
             override fun onFailure(
@@ -341,14 +365,49 @@ class MainActivity : AppCompatActivity(), FoodFragment.OnButtonClickListener {
 
     // Implement the button click methods from the interface
     override fun onYesButtonClick() {
+        var countCalories = 0.0
+        if(firstTime==0){
+            prevCal = calorieGoal
+        }
+        else if(firstTime==1){
+            calorieGoal = prevCal
+        }
+        firstTime = 1
+
+        for(food in foodList){
+            foodListTotal.add(food)
+        }
+        var temp = 0.0
+        for(food in foodListTotal){
+            temp += food.getCalories()
+        }
+
+        // Iterate through the food list
+        for (food in foodList) {
+            val caloriesValue = food.getCalories()
+            if (temp < calorieGoal) {
+                foodResult.add(food)
+                countCalories += caloriesValue
+            }
+            else {
+                Toast.makeText(this, "Food can't be added since the calorie goal has been reached", Toast.LENGTH_SHORT).show()
+//                val foodAdapter = FoodAdapter(foodResult)
+//                foodRecyclerView.adapter = foodAdapter
+//                foodRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+//                foodRecyclerView.addItemDecoration(DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL))
+                break // Stop adding if the calorie goal is reached
+            }
+        }
+
+      //  var caloriegoalTest = findViewById<TextView>(R.id.total_calories_text)
+     //   caloriegoalTest.text = "Total Calories: ${temp} / Goal: $prevCal"
+
         // Handle Yes button click (navigate back to the main activity page)
         supportFragmentManager.popBackStack()
-
     }
 
     override fun onNoButtonClick() {
         // Handle No button click (navigate back to the main activity page)
         supportFragmentManager.popBackStack()
-
     }
 }
