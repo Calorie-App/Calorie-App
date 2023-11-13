@@ -27,13 +27,15 @@ The following REQUIRED files are included:
     - [X] App Overview (Milestone 1)
     - [X] App Spec (Milestone 1)
     - [X] Checked off 2+ completed features
-      - [X] API calls will fetch data from Nutrition API
-      - [X] User will be able to enter the desired food through an EditText View. Which CalorieCalc will take user's input to make API calls to get information about the food entered by the user from the Nutrition API
+      - [X] API calls fetches data from Nutrition API
+      - [X] User will be able to enter the desired food through an EditText View. Which CalorieCalc will take user's input to make API calls
       - [X] Implemented functionality so user must enter value in both EditText in order to proceed.
       - [X] Toast is displayed to user stating to "Please enter values in both fields" if user did not enter values in both fields.
       - [X] Created a Food Class to construct Food Objects from JSONArray
-      - [X] Fragment is working and displaying fetched food data from API
-      - [X] The user is asked "What is your calorie intake goal for today?". The purpose of this feature is for the user to be able to add food to the list until the calorie amount reaches his/her calorie intake goal for the day.
+      - [X] Fragment is working and displaying food data fetched from API
+      - [X] The user is asked "What is your calorie intake goal for today?". 
+      - [X] Functionality implemented where user is not able to change the calorie goal. The calorie goal value is set to user's initial input and remains constant.
+      - [X] Functionality implemented to allow user to keep on adding food to the list until the calorie goal is reached.
       - [X] Section for the user to type the food he/she desires as well as a Search button to search for the desired food.
 - [X] 2+ Videos/GIFs of build progress
   - UI Building Process (attached below)
@@ -43,9 +45,10 @@ The following REQUIRED files are included:
     - [ ] We have also added the Demo Video Link to the Group Info Form on the course portal.
 
 The following EXTRA features are implemented:
-- [] List anything else that you added to improve your submission!
+- [X] List anything else that you added to improve your submission!
+  - [X] CalorieCalc takes user's calorie goal input in EditText, turns it into Text and then converts to Double
+ 
     
-
 
 ## 🎥 Demo Video
 

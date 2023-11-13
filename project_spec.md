@@ -86,7 +86,7 @@ The product we want to build is clearly defined. The vision is clear for Calorie
 
 Required Features:
 - API calls will fetch data from Nutrition API
-- User will be able to enter the desired food through an EditText View. Which CalorieCalc will take user's input to make API calls to get information about the food entered by the user from the Nutrition API
+- User will be able to enter the desired food through an EditText View. Which CalorieCalc will take user's input to make API calls
 - Search Button will search food info requested by user
 - RecyclerView to display the list of what the user chose to consume
 - Fragment will display fetched food data from API
@@ -96,7 +96,7 @@ Stretch Features:
 - Create Food Class to construct Food Object from JSONArray
 - The user will be initially asked "What is your calorie intake goal for today?". The purpose of this feature is for the user to be able to add food to the list until the calorie amount reaches his/her calorie intake goal for the day.
 - There will be a section for the user to type the food he/she desires as well as a Search button to search for the desired food.
-- Implemented functionality so user must enter value in both EditText in order to proceed.
+- Implement functionality so user must enter value in both EditText in order to proceed.
 - Toast will be displayed to user stating to "Please enter values in both fields" if user did not enter values in both fields.
 
 
@@ -111,14 +111,14 @@ Stretch Features:
 
 Required Feature
 
-- First User Interaction will be the main page in which there will be a brief description about CalorieCalc. There will be two questions in the first page. The first question is "What is your calorie intake goal for today?". The ojective is for the user to add as much food as he/she would like until his/her calorie intake goal is met for the day. The second question is "What food would you like to consume?". The user will have a section, so he/she can type his/her answer as to what food he/she would like to eat. There will be a search button towards the bottom, so the user can click it to search the food typed.
+- First User Interaction will be the main page in which there will be a brief description about CalorieCalc. There will be two questions in the first page. The first question is "What is your calorie intake goal for today?". The objective is for the user to add as much food as he/she would like until his/her calorie intake goal is met for the day. The second question is "What food would you like to consume?". The user will have a section, so he/she can type his/her answer as to what food he/she would like to eat. There will be a search button towards the bottom, so the user can click it to search the food typed.
+  - Implement functionality so user is not able to change the calorie goal. The calorie goal value is set to user's initial input and remains constant.
+  - Implement functionality for user to not be able to proceed until both fields calorie goal and food to be searched.
 
-
-- Second Interaction will display the food the user searched for. The data displayed will be fetched from a Nutrition API. CalorieCalc will make an API call to the Nutrition API to fetch data such as the food name, calorie, fat saturated, protein, carbohydrates, and fiber to display it to the user. The user will then be asked to if he/she would like to consume the food search.
-
+- Second Interaction will display the food the user searched for. The data displayed will be fetched from a Nutrition API. CalorieCalc will make an API call to the Nutrition API to fetch data such as the food name, calorie, fat saturated, protein, carbohydrates, and fiber to display it to the user. The user will then be asked to if he/she would like to consume the food searched.
 
 - Third Interaction depends on the user's answer to the question "Would you like to consume this food?". If the user clicks no, then the application will take the user back to the main page, so he/she can search for another food item. If the user clicks the yes button, the food searched will be added to the RecyclerView. The user will be be able add food to the list until his/her calorie intake goal for the day is reached. Then, the recyclerview will display the list of the food chosen by the user.
-
+  - Implement functionality to allow user to keep on adding food to the list until the calorie goal is reached.
 
 
 ## Wireframes
