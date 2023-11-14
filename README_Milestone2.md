@@ -46,7 +46,7 @@ The following REQUIRED files are included:
 
 - [X] Our 🎥 Demo Video
     - [X] We have also added the Demo Video Link to the Group Info Form on the course portal.
-    - [X] PowerPoint: We've also created a PowerPoint for CalorieCalc
+    - [X] PowerPoint: We've also created a PowerPoint for CalorieCalc. The powerpoint name is "CalorieCalc.pptx", located here among the other files such as project_specs.md, README.md, and README_Milestone2.md, etc
  
 
 The following EXTRA features are implemented:

@@ -190,7 +190,8 @@ Notes: Please Click below to watch Narrated Demo Video. The file size is too big
     </a>
   </div>
 
-
+## PowerPoint: 
+- [X] PowerPoint created for CalorieCalc. The powerpoint name is "CalorieCalc.pptx", located here among the other files such as project_specs.md, README.md, and README_Milestone2.md, etc
 
 
 ## License
