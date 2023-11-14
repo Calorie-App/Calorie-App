@@ -70,6 +70,8 @@ Here's a video that demos all of the app's implemented features:
 VIDEO created with **Loom**
 
 ## CalorieCalc Narrated Demo Video
+Notes: Please Click below to watch Narrated Demo Video. The file size is too big to view on GitHub itself.
+
  <div>
     <a href="https://www.loom.com/share/e14c26d51ee34f0985dae92d8a7921a8">
       <p>CalorieCalc Narrated Demo Video - Watch Video</p>
@@ -79,7 +81,6 @@ VIDEO created with **Loom**
     </a>
   </div>
 
-<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/e14c26d51ee34f0985dae92d8a7921a8?sid=1f6545b1-0e85-46be-89ca-1c24699c0b80" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 
 ## Notes
