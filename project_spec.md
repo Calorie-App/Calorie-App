@@ -168,15 +168,18 @@ Things Learned:
 - Learned to convert user's input in an EditText to Double 
 
 
+## 2+ Videos/GIFs of build progress
 For Milestone 2, include **2+ Videos/GIFs** of the build process here!
 
 Notes: Please download the GIFs. The file size is too big to view on GitHub itself.
+
+
 <img src='Videos/UI_Building_Process.mp4' title='Main Page UI Building Process' width='450' alt='Main Page UI Building Process' />
 <img src='Videos/Food_Building_Process.mp4' title='Food Object Building Process' width='450' alt='Food Object Building Process' />
 
 ## CalorieCalc Narrated Demo Video
 
-Notes: Please download Narrated Demo Video. The file size is too big to view on GitHub itself.
+Notes: Please Click below to watch Narrated Demo Video. The file size is too big to view on GitHub itself.
 
 <div>
     <a href="https://www.loom.com/share/e14c26d51ee34f0985dae92d8a7921a8">
