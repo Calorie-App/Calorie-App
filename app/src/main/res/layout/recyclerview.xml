@@ -36,12 +36,13 @@
         tools:text="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/foodRecyclerView"
+        android:id="@+id/food_recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total_count_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/total_count_textView"
+        tools:listitem="@layout/food_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

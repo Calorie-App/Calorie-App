@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- food_fragment.xml -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,7 +12,7 @@
         android:id="@+id/name_label_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:text="@string/name"
         android:textColor="@color/orange"
         android:textSize="20dp"
@@ -27,7 +26,7 @@
         android:id="@+id/name_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:hint="pizza"
         android:text="burger"
         android:textColor="@color/white"
@@ -74,13 +73,12 @@
         android:id="@+id/question_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="32dp"
         android:text="Would you like to consume this food?"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fiber_label_textView" />
 
@@ -89,11 +87,11 @@
         android:layout_width="134dp"
         android:layout_height="43dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="25dp"
         android:text="YES"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/no_button"
-        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintEnd_toEndOf="@+id/question_textView"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="@+id/question_textView"
         app:layout_constraintTop_toBottomOf="@+id/question_textView"
         app:layout_constraintVertical_bias="0.0" />
@@ -103,11 +101,11 @@
         android:layout_width="133dp"
         android:layout_height="43dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="25dp"
         android:text="NO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/question_textView"
-        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="@+id/question_textView"
         app:layout_constraintTop_toBottomOf="@+id/question_textView"
         app:layout_constraintVertical_bias="0.0" />
@@ -202,8 +200,8 @@
         android:id="@+id/fiber_label_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="Fiber (g):"
         android:textColor="@color/orange"
         android:textSize="20dp"
@@ -213,14 +211,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/protein_label_textView"
         app:layout_constraintTop_toBottomOf="@+id/carbohydrate_label_textView"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/fiber_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         android:text="0"
         android:textColor="@color/white"
         android:textSize="20dp"
@@ -229,8 +227,10 @@
         app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="@+id/protein_TextView"
         app:layout_constraintTop_toBottomOf="@+id/carbohydrate_textView"
-        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintVertical_bias="0.019"
         tools:text="0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

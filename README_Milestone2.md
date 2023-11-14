@@ -36,13 +36,18 @@ The following REQUIRED files are included:
       - [X] The user is asked "What is your calorie intake goal for today?". 
       - [X] Functionality implemented where user is not able to change the calorie goal. The calorie goal value is set to user's initial input and remains constant.
       - [X] Functionality implemented to allow user to keep on adding food to the list until the calorie goal is reached.
+      - [X] Functionality implemented to keep calorie count as food is added
+      - [X] Toast displays message "Food can't be added since the calorie goal has been reached" once calorie goal is reached.
       - [X] Section for the user to type the food he/she desires as well as a Search button to search for the desired food.
 - [X] 2+ Videos/GIFs of build progress
-  - UI Building Process (attached below)
-  - Food Class Building Process (attached below)
+  Notes: Please download the GIFs. The file size is too big to view on GitHub itself.
+    - UI Building Process (attached below)
+    - Food Class Building Process (attached below)
 
-- [ ] Our 🎥 Demo Video
-    - [ ] We have also added the Demo Video Link to the Group Info Form on the course portal.
+- [X] Our 🎥 Demo Video
+    - [X] We have also added the Demo Video Link to the Group Info Form on the course portal.
+    - [X] PowerPoint: We've also created a PowerPoint for CalorieCalc
+ 
 
 The following EXTRA features are implemented:
 - [X] List anything else that you added to improve your submission!
@@ -58,7 +63,20 @@ Here's a video that demos all of the app's implemented features:
 <img src='Videos/UI_Building_Process.mp4' title='Main Page UI Building Process' width='450' alt='Main Page UI Building Process' />
 <img src='Videos/Food_Building_Process.mp4' title='Food Object Building Process' width='450' alt='Food Object Building Process' />
 
-VIDEO created with **KAP**
+VIDEO created with **Loom**
+
+## CalorieCalc Narrated Demo Video
+ <div>
+    <a href="https://www.loom.com/share/e14c26d51ee34f0985dae92d8a7921a8">
+      <p>CalorieCalc Narrated Demo Video - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/e14c26d51ee34f0985dae92d8a7921a8">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/e14c26d51ee34f0985dae92d8a7921a8-with-play.gif">
+    </a>
+  </div>
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/e14c26d51ee34f0985dae92d8a7921a8?sid=1f6545b1-0e85-46be-89ca-1c24699c0b80" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 
 ## Notes
 

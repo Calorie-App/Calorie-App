@@ -1,36 +1,71 @@
 package com.example.calorieapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONArray
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 //private val ARG_PARAM1 = hashMapOf<String, String>()
-private val ARG_PARAM1 = "param1"
+private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+
 
 /**
  * A simple [Fragment] subclass.
  * Use the [FoodFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
 class FoodFragment : Fragment() {
 
-    private var buttonClickListener: OnButtonClickListener? = null
+    private var param1: String? = null
+    private var param2: String? = null
+//
+//    // THIS IS ADDED FROM VIDEO
+    private lateinit var foodAdapter : FoodAdapter
+    private lateinit var foodRecyclerView: RecyclerView
+    private lateinit var foodList: MutableList<Food>
+
+//    // THIS IS ADDED FROM VIDEO
+//    var name : String ="apple"
+//    var calories : String ="0.0"
+//    var fat_saturated_ : String="0.0"
+//    var protein_ : String="0.0"
+//    var carbohydrates_ : String="0.0"
+//    var fiber_ : String="0.0"
+
+
+    // THIS IS ADDED FROM VIDEO
+//    override fun onCreate(savedInstanceState: Bundle?){
+//        super.onCreate(savedInstanceState)
+//        //foodList = mutableListOf<Food>()
+//
+//        arguments?.let {
+//            param1 = it.getString(ARG_PARAM1)
+//            param1 = it.getString(ARG_PARAM1)
+//        }
+//    }
+
+
+     private var buttonClickListener: OnButtonClickListener? = null
 
     interface OnButtonClickListener {
         fun onYesButtonClick()
         fun onNoButtonClick()
+
     }
 
-    fun setOnButtonClickListener(listener: OnButtonClickListener) {
+    fun setOnButtonClickListener(listener: MainActivity) {
         this.buttonClickListener = listener
     }
 
@@ -39,6 +74,8 @@ class FoodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_food, container, false)
+
+//        foodList = mutableListOf<Food>()
 
 
         var name_ = "apple"
@@ -49,11 +86,17 @@ class FoodFragment : Fragment() {
         var fiber_ = "0.0"
 
 
-        //testing
-        val jsonArrayString = arguments?.getString(ARG_PARAM1)
-        val jsonArray = JSONArray(jsonArrayString)
-        for (i in 0 until jsonArray.length()) {
-            val jsonObject = jsonArray.optJSONObject(i)
+//        //testing
+       val jsonArrayString = arguments?.getString(ARG_PARAM1)
+//        // THIS IS FROM MAIN ACTIVITY
+//        //        val foodArray = json.jsonArray
+//        //       foodList = Food.fromJSONArray(foodArray)
+        val foodArray = JSONArray(jsonArrayString)
+//        foodList = Food.fromJSONArray(foodArray)
+
+
+        for (i in 0 until foodArray.length()) {
+            val jsonObject = foodArray.optJSONObject(i)
             name_ = jsonObject?.optString("name", "").toString()
             calories_ = jsonObject?.optString("calories", "").toString()
             fat_saturated_ = jsonObject?.optString("fat_total_g", "").toString()
@@ -62,6 +105,7 @@ class FoodFragment : Fragment() {
             fiber_ = jsonObject?.optString("fiber_g", "").toString()
 
         }
+
 
         // Assuming that your JSON array contains only one object, you can get the first one
 
@@ -97,6 +141,8 @@ class FoodFragment : Fragment() {
         return view
     }
 
+
+
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
@@ -107,4 +153,26 @@ class FoodFragment : Fragment() {
                 }
             }
     }
+
+//
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
+//        super.onViewCreated(view, savedInstanceState)
+//        //testing
+//        val jsonArrayString = arguments?.getString(ARG_PARAM1)
+//        // THIS IS FROM MAIN ACTIVITY
+//        //        val foodArray = json.jsonArray
+//        //        foodList = Food.fromJSONArray(foodArray)
+//        val foodArray = JSONArray(jsonArrayString)
+//        foodList = Food.fromJSONArray(foodArray)
+//
+//
+//                 val foodAdapter = FoodAdapter(foodList)
+//                foodRecyclerView = view.findViewById(R.id.food_recyclerview)
+//                 foodRecyclerView.adapter = foodAdapter
+//                 foodRecyclerView.layoutManager = LinearLayoutManager(context)
+//                 foodRecyclerView.addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
+//    }
+//
+
+
 }

@@ -85,24 +85,28 @@ The product we want to build is clearly defined. The vision is clear for Calorie
 ### 1. User Features (Required and Optional)
 
 Required Features:
-- API calls will fetch data from Nutrition API
-- User will be able to enter the desired food through an EditText View. Which CalorieCalc will take user's input to make API calls
-- Search Button will search food info requested by user
+- [X] API calls will fetch data from Nutrition API
+- [X] User will be able to enter the desired food through an EditText View. Which CalorieCalc will take user's input to make API calls
+- [X] There will be a section for the user to type the food he/she desires in an EditText
+- [X] The user will be initially asked "What is your calorie intake goal for today?". The purpose of this feature is for the user to be able to add food to the list until the calorie amount reaches his/her calorie intake goal for the day.
+- [X] Functionality implemented where user is not able to change the calorie goal. The calorie goal value is set to user's initial input and remains constant.
+- [X] Search Button will search food info requested by user
+- [X] Fragment displays fetched food data from API
+- [X] Functionality implemented to allow user to keep on adding food to the list until the calorie goal is reached.
+- [X] Implement functionality so user must enter value in both EditText in order to proceed.
 - RecyclerView to display the list of what the user chose to consume
-- Fragment will display fetched food data from API
+- [X] Functionality implemented to keep calorie count as food is added
 
 
 Stretch Features:
-- Create Food Class to construct Food Object from JSONArray
-- The user will be initially asked "What is your calorie intake goal for today?". The purpose of this feature is for the user to be able to add food to the list until the calorie amount reaches his/her calorie intake goal for the day.
-- There will be a section for the user to type the food he/she desires as well as a Search button to search for the desired food.
-- Implement functionality so user must enter value in both EditText in order to proceed.
-- Toast will be displayed to user stating to "Please enter values in both fields" if user did not enter values in both fields.
+- [X] Create Food Class to construct Food Object from JSONArray
+- [X] Toast will be displayed to user stating to "Please enter values in both fields" if user did not enter values in both fields.
+- [X] Toast displays message "Food can't be added since the calorie goal has been reached" once calorie goal is reached.
 
 
 EXTRA Features:
-  - [X] CalorieCalc takes user's calorie goal input in EditText, turns it into Text and then converts to Double
-  - [X] User must first enter calorie goal and food that wants to search in order to proceed. Calorie goal is set to user's input and remains constant. Since it would be unnecessary to obligate user to enter calorie goal and food to be searched in order to proceed, functionality was implemented so the user does not have to put both inputs to proceed, user can just enter food that he/she wants to search.
+- [X] CalorieCalc takes user's calorie goal input in EditText, turns it into Text and then converts to Double
+- [X] User must first enter calorie goal and food that wants to search in order to proceed. Calorie goal is set to user's input and remains constant. Since it would be unnecessary to obligate user to enter calorie goal and food to be searched in order to proceed, functionality was implemented so the user does not have to put both inputs to proceed, user can just enter food that he/she wants to search.
 
 ### 2. Chosen API(s)
 
@@ -119,9 +123,13 @@ Required Feature
   - Implement functionality for user to not be able to proceed until both fields calorie goal and food to be searched.
 
 - Second Interaction will display the food the user searched for. The data displayed will be fetched from a Nutrition API. CalorieCalc will make an API call to the Nutrition API to fetch data such as the food name, calorie, fat saturated, protein, carbohydrates, and fiber to display it to the user. The user will then be asked to if he/she would like to consume the food searched.
-
-- Third Interaction depends on the user's answer to the question "Would you like to consume this food?". If the user clicks no, then the application will take the user back to the main page, so he/she can search for another food item. If the user clicks the yes button, the food searched will be added to the RecyclerView. The user will be be able add food to the list until his/her calorie intake goal for the day is reached. Then, the recyclerview will display the list of the food chosen by the user.
   - Implement functionality to allow user to keep on adding food to the list until the calorie goal is reached.
+  - Implement functionality to keep calorie count as food is added
+  - Toast displays message "Food can't be added since the calorie goal has been reached" once calorie goal is reached.
+
+- Third Interaction depends on the user's answer to the question "Would you like to consume this food?". 
+  - If the user clicks no, then the application will take the user back to the main page, so he/she can search for another food item. 
+  - If the user clicks the yes button, the food searched will be added to the RecyclerView. The user will be able add food to the list until his/her calorie intake goal for the day is reached. Then, the recyclerview will display the list of the food chosen by the user.
 
 
 ## Wireframes
@@ -162,9 +170,24 @@ Things Learned:
 
 For Milestone 2, include **2+ Videos/GIFs** of the build process here!
 
+Notes: Please download the GIFs. The file size is too big to view on GitHub itself.
 <img src='Videos/UI_Building_Process.mp4' title='Main Page UI Building Process' width='450' alt='Main Page UI Building Process' />
 <img src='Videos/Food_Building_Process.mp4' title='Food Object Building Process' width='450' alt='Food Object Building Process' />
 
+## CalorieCalc Narrated Demo Video
+
+Notes: Please download Narrated Demo Video. The file size is too big to view on GitHub itself.
+
+<div>
+    <a href="https://www.loom.com/share/e14c26d51ee34f0985dae92d8a7921a8">
+      <p>CalorieCalc Narrated Demo Video - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/e14c26d51ee34f0985dae92d8a7921a8">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/e14c26d51ee34f0985dae92d8a7921a8-with-play.gif">
+    </a>
+  </div>
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/e14c26d51ee34f0985dae92d8a7921a8?sid=1f6545b1-0e85-46be-89ca-1c24699c0b80" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 
 ## License

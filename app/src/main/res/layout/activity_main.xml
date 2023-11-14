@@ -11,6 +11,7 @@
         android:id="@+id/app_name"
         android:layout_width="212dp"
         android:layout_height="51dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/abril_fatface"
         android:text="CalorieCalc"
         android:textColor="@color/orange"
@@ -108,7 +109,7 @@
         android:id="@+id/calorie_logo"
         android:layout_width="76dp"
         android:layout_height="66dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintStart_toEndOf="@+id/app_name"
@@ -116,14 +117,15 @@
         app:srcCompat="@drawable/flame_logo" />
 
     <FrameLayout
-        android:id="@+id/flFragment"
-        android:layout_width="407dp"
-        android:layout_height="619dp"
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/search_button"
-        app:layout_constraintStart_toStartOf="@+id/search_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.422" />
 
     <Button
         android:id="@+id/search_button"
